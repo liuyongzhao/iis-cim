@@ -26,6 +26,6 @@ public class JpaConvertSubmitterWithJsonTest {
     @Test
     public void convertToEntityAttributeWithNull(){
         Submitter obj = converter.convertToEntityAttribute(null);
-        log.info(obj.toString());
+        log.info(obj != null ? obj.toString(): null);
     }
 }
