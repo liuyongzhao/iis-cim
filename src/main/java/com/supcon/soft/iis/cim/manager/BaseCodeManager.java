@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.supcon.soft.iis.cim.entity.BaseCodeEntity;
 import com.supcon.soft.iis.cim.entity.BaseCodeItemEntity;
+import com.supcon.soft.iis.cim.exception.InfoNotFoundException;
 import com.supcon.soft.iis.cim.model.BaseCode;
 import com.supcon.soft.iis.cim.model.BaseCodeItem;
 import com.supcon.soft.iis.cim.repository.BaseCodeItemRepository;
@@ -31,13 +32,13 @@ public class BaseCodeManager {
     @Autowired
     private BaseCodeItemRepository baseCodeItemRepository;
 
-    public BaseCode getBaseCodeById(int id) {
+    public BaseCode getBaseCodeById(int id) throws InfoNotFoundException {
         try {
             BaseCode obj = objectMapper.readValue(getKey(BaseCode.class.toString() + id), BaseCode.class);
             if(null == obj) {
                 BaseCodeEntity entity = baseCodeRepository.findById(id).orElse(null);
                 if (entity == null) {
-                    return null;
+                    throw new InfoNotFoundException(BaseCode.class.toString(),String.valueOf(id));
                 }
                 obj = EntityToObject(entity);
                 List<BaseCodeItemEntity> items = baseCodeItemRepository.getInUseListByBaseCodeId(id);
