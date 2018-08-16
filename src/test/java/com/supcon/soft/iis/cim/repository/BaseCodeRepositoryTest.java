@@ -16,7 +16,7 @@ import java.util.Locale;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
-public class BaseCodeEntityRepositoryTest {
+public class BaseCodeRepositoryTest {
     private final Fairy fairy = Fairy.create(Locale.forLanguageTag("zh"));
 
     @Autowired
@@ -60,5 +60,12 @@ public class BaseCodeEntityRepositoryTest {
         Assert.assertNull(result);
     }
 
+    @Test
+    public void insertGenderCode(){
+        BaseCodeEntity entity = new BaseCodeEntity();
+        entity.setName("人的性别代码");
+        entity.setDescription("GB/T 2261.1-2003");
+        log.info(repository.saveAndFlush(entity).toString());
+    }
 
 }

@@ -19,7 +19,7 @@ public class BaseCodeEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private int id;
+    private Integer id;
     @Column(nullable = false, length = 45)
     private String name;
     @Column(columnDefinition = "text")
@@ -32,7 +32,7 @@ public class BaseCodeEntity implements Serializable {
     @Column
     private Date deleted;
     @Column(columnDefinition = "bit")
-    private boolean used = true;
+    private Boolean used = true;
     @Convert(converter = JpaConvertSubmitterWithJson.class)
     private Submitter creator = new Submitter();
     @Convert(converter = JpaConvertSubmitterWithJson.class)

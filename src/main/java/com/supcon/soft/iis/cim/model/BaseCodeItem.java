@@ -2,22 +2,23 @@ package com.supcon.soft.iis.cim.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @SuppressWarnings("WeakerAccess")
 @Data
-public class BaseCodeItem {
-    private int id;
+public class BaseCodeItem implements Serializable {
+    private Integer id;
     private String code;
     private String value;
-    private int baseCodeId;
+    private Integer baseCodeId;
     private List<BaseCodeItem> items;
-    private int parentId;
+    private Integer parentId;
     private Date created;
     private Date updated;
     private Date deleted;
-    private boolean used;
+    private Boolean used;
     private Submitter creator;
     private Submitter updater;
     private Submitter deleter;
