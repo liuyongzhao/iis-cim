@@ -23,6 +23,7 @@ import java.util.List;
 @Slf4j
 public class BaseCodeManager {
     private final ObjectMapper objectMapper = new ObjectMapper();
+
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
