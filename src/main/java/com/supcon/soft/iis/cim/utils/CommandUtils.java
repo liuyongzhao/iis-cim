@@ -1,24 +1,28 @@
 package com.supcon.soft.iis.cim.utils;
 
-
+/**
+ * Command Line Arguments Handler
+ * @author qiyuqi
+ */
 public class CommandUtils {
     private static final String GLOBAL_SYS_PROFILE_KEY = "profile";
 
-    public static String getAndSetSpringProfile(String[] args){
-        String profile = null;
+    /**
+     * Setting Application Profile
+     * @param args command line arguments
+     * @author qiyuqi
+     */
+    public static void getAndSetSpringProfile(String[] args){
         if(args != null && args.length > 0){
             for(String arg : args){
                 String p = parseSpringProfile(arg);
                 if (p != null){
-                    profile = p;
-                    System.setProperty(GLOBAL_SYS_PROFILE_KEY, profile);
+                    System.setProperty(GLOBAL_SYS_PROFILE_KEY, p);
                 }
             }
-        }
-        if(profile == null){
+        } else{
             System.setProperty(GLOBAL_SYS_PROFILE_KEY, Env.dev.name());
         }
-        return profile;
     }
 
     private static String parseSpringProfile(String arg){

@@ -7,6 +7,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * BaseCode [Data Transport Object]
+ * @author qiyuqi
+ */
 @Data
 @RedisHash("baseCode")
 public class BaseCode implements Serializable {

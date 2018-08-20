@@ -10,6 +10,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * BaseCode [POJO]
+ * @author qiyuqi
+ */
 @Data
 @Entity
 @Table(name="BaseCode")

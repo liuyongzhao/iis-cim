@@ -2,6 +2,10 @@ package com.supcon.soft.iis.cim.model;
 
 import lombok.Data;
 
+/**
+ * The Common Object present Requester
+ * @author qiyuqi
+ */
 @Data
 public class Submitter {
     private String userId = "0";

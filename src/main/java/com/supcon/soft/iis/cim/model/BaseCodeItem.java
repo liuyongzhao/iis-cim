@@ -6,7 +6,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-@SuppressWarnings("WeakerAccess")
+/**
+ * BaseCodeItem [DTO]
+ * @author qiyuqi
+ */
 @Data
 public class BaseCodeItem implements Serializable {
     private Integer id;
