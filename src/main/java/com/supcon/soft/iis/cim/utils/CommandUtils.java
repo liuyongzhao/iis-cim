@@ -2,7 +2,7 @@ package com.supcon.soft.iis.cim.utils;
 
 
 public class CommandUtils {
-    public static final String GLOBAL_SYS_PROFILE_KEY = "profile";
+    private static final String GLOBAL_SYS_PROFILE_KEY = "profile";
 
     public static String getAndSetSpringProfile(String[] args){
         String profile = null;
