@@ -12,18 +12,18 @@ import java.text.DecimalFormat;
 import java.util.Date;
 @Data
 @Entity
-@Table(name="Processsegmentphysicalassetspecification")
+@Table(name="Processsegmentmaterialspecification")
 @DynamicInsert
 @DynamicUpdate
-public class ProcesssegmentphysicalassetspecificationEntity implements Serializable {
+public class ProcesssegmentmaterialspecificationEntity implements Serializable {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column
         private Integer id;
         @Column(nullable = false)
-        private Integer specificationId;
+        private Integer processSegmentId;
         @Column(nullable = false)
-        private Integer PhysicalAssetClassId;
+        private Integer materialClassId;
         @Column(nullable = false, length = 45)
         private String useType;
         @Column(nullable = false)

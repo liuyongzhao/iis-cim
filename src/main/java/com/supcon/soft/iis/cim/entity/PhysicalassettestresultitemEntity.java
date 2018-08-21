@@ -8,28 +8,27 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.text.DecimalFormat;
 import java.util.Date;
 @Data
 @Entity
-@Table(name="Processsegmentphysicalassetspecification")
+@Table(name="Physicalassettestresultitem")
 @DynamicInsert
 @DynamicUpdate
-public class ProcesssegmentphysicalassetspecificationEntity implements Serializable {
+public class PhysicalassettestresultitemEntity implements Serializable {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column
         private Integer id;
         @Column(nullable = false)
-        private Integer specificationId;
+        private Integer resultId;
         @Column(nullable = false)
-        private Integer PhysicalAssetClassId;
+        private Integer physicalAssetID;
+        @Column
+        private Integer materialPropertyTagId;
+        @Column(nullable = false)
+        private Integer materialPropertyID;
         @Column(nullable = false, length = 45)
-        private String useType;
-        @Column(nullable = false)
-        private DecimalFormat quantity;
-        @Column(nullable = false)
-        private Integer unitId;
+        private String value;
         @Temporal(TemporalType.TIMESTAMP)
         @Column(columnDefinition = "timestamp default current_timestamp")
         private Date created;
@@ -37,8 +36,6 @@ public class ProcesssegmentphysicalassetspecificationEntity implements Serializa
         private Date updated;
         @Column
         private Date deleted;
-        @Column(columnDefinition = "bit")
-        private Boolean used = true;
         @Convert(converter = JpaConvertSubmitterWithJson.class)
         private Submitter creator = new Submitter();
         @Convert(converter = JpaConvertSubmitterWithJson.class)

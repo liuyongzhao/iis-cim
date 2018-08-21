@@ -8,14 +8,13 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.text.DecimalFormat;
 import java.util.Date;
 @Data
 @Entity
-@Table(name="Processsegmentphysicalassetspecification")
+@Table(name="Physicalassettestspecificationitem")
 @DynamicInsert
 @DynamicUpdate
-public class ProcesssegmentphysicalassetspecificationEntity implements Serializable {
+public class PhysicalassettestspecificationitemEntity implements Serializable {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column
@@ -23,13 +22,9 @@ public class ProcesssegmentphysicalassetspecificationEntity implements Serializa
         @Column(nullable = false)
         private Integer specificationId;
         @Column(nullable = false)
-        private Integer PhysicalAssetClassId;
-        @Column(nullable = false, length = 45)
-        private String useType;
+        private Integer propertyTagId;
         @Column(nullable = false)
-        private DecimalFormat quantity;
-        @Column(nullable = false)
-        private Integer unitId;
+        private Integer propertyId;
         @Temporal(TemporalType.TIMESTAMP)
         @Column(columnDefinition = "timestamp default current_timestamp")
         private Date created;
