@@ -44,4 +44,5 @@ public class BaseCodeItemEntity implements Serializable {
     @Convert(converter = JpaConvertSubmitterWithJson.class)
     private Submitter deleter;
 
+
 }

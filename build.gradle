@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.0.4.RELEASE'
+    id "io.spring.dependency-management" version "1.0.6.RELEASE"
+}
+
+group 'com.supcon.soft.iis'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-devtools')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.apache.shiro:shiro-spring:1.4.0')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-redis')
+    compile('org.springframework.session:spring-session-data-redis')
+    compile('mysql:mysql-connector-java:8.0.12')
+    compile('org.projectlombok:lombok')
+    compile('com.alibaba:druid:1.1.10')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('com.devskiller:jfairy:0.6.2')
+}
