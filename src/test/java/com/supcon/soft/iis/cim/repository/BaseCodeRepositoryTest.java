@@ -26,7 +26,7 @@ public class BaseCodeRepositoryTest {
     public void insertTest() {
         BaseCodeEntity item = new BaseCodeEntity();
         item.setName(fairy.person().getFullName());
-        log.info("输出名字"+item.toString());
+        log.info(item.toString());
         BaseCodeEntity result = repository.saveAndFlush(item);
         log.info(result.toString());
         BaseCodeEntity query = repository.findById(result.getId()).orElse(null);
@@ -69,3 +69,4 @@ public class BaseCodeRepositoryTest {
     }
 
 }
+

@@ -9,7 +9,10 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-
+/**
+ * BaseCode [POJO]
+ * @author qiyuqi
+ */
 @Data
 @Entity
 @Table(name="BaseCode")
@@ -39,6 +42,5 @@ public class BaseCodeEntity implements Serializable {
     private Submitter updater;
     @Convert(converter = JpaConvertSubmitterWithJson.class)
     private Submitter deleter;
-
 
 }

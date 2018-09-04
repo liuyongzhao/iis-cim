@@ -1,6 +1,6 @@
-
 package com.supcon.soft.iis.cim.manager;
 
+import com.supcon.soft.iis.cim.exception.InfoNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,12 @@ public class BaseCodeManagerTest {
 
     @Test
     public void getBaseCodeByIdTest(){
-        log.info(baseCodeManager.getBaseCodeById(1).toString());
+        try {
+            log.info(baseCodeManager.getBaseCodeById(1).toString());
+        }catch (InfoNotFoundException ex){
+            log.info(ex.getMessage());
+        }
     }
 
 }
+

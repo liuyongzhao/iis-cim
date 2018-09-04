@@ -47,7 +47,6 @@ public class BaseCodeManager {
     public BaseCode getBaseCodeById(int id) {
         try {
             String jsonString = getKey(BaseCode.class.toString() + id);
-            System.out.println(jsonString);
             BaseCode obj;
            if (jsonString == null) {
                 BaseCodeEntity entity = baseCodeRepository.findById(id).orElse(null);
@@ -61,7 +60,6 @@ public class BaseCodeManager {
                 obj.setItems(list);
                 setKey(BaseCode.class.toString() + obj.getId(), obj);
                 obj = objectMapper.readValue(getKey(BaseCode.class.toString() + id), BaseCode.class);
-                System.out.println(obj);
                 return obj;
             }
             obj = objectMapper.readValue(jsonString, BaseCode.class);
@@ -108,7 +106,6 @@ public class BaseCodeManager {
 
     private String getKey(String key) {
         ValueOperations<String, String> op = redisTemplate.opsForValue();
-        System.out.println(op.get(key));
         return op.get(key);
     }
 

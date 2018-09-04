@@ -34,15 +34,15 @@ public class BaseCodeItemRepositoryTest {
 
     @Test
     public void getSingleRecord(){
-        //System.out.print(repository.findById(1).toString());
         log.info(repository.findById(1).toString());
     }
 
     @Test
     public void getInUseListByBaseCodeId() {
         List<BaseCodeItemEntity> list = repository.getInUseListByBaseCodeId(1);
-        list.forEach(item ->
-                log.info(item.toString()));
+
+        list.forEach(item -> log.info(item.toString()));
+
     }
 
     @Test
@@ -55,4 +55,6 @@ public class BaseCodeItemRepositoryTest {
         log.info(String.valueOf(repository.getInUseListByBaseCodeId(1).size()));
     }
 
+
 }
+

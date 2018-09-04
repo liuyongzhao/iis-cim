@@ -4,7 +4,6 @@ package com.supcon.soft.iis.cim.controller;
 import com.supcon.soft.iis.cim.core.BaseController;
 import com.supcon.soft.iis.cim.entity.BaseCodeEntity;
 import com.supcon.soft.iis.cim.manager.BaseCodeManager;
-import com.supcon.soft.iis.cim.model.BaseCode;
 import com.supcon.soft.iis.cim.model.Submitter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +13,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
-
-
 /**
  * BaseCode REST API
  *
  * @author qiyuqi
  */
-
 
 @RestController
 @RequestMapping(value = "/basecode")
@@ -68,4 +64,5 @@ public class BaseCodeController extends BaseController {
     }
 
 }
+
 

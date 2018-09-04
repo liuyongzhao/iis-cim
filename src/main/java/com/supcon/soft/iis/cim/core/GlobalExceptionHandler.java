@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
  * @see <a href="https://www.cnblogs.com/nosqlcoco/p/5562107.html"/>
  * @see <a href="https://blog.csdn.net/VcStrong/article/details/70159062"/>*/
 
-
 @ControllerAdvice
 @RestController
 public class GlobalExceptionHandler {
@@ -22,7 +21,6 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(InfoNotFoundException.class)
-
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ResponseBody

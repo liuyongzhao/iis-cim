@@ -7,6 +7,10 @@ import com.supcon.soft.iis.cim.model.Submitter;
 import javax.persistence.AttributeConverter;
 import java.io.IOException;
 
+/**
+ * Attribute Convert for Submitter with JPA
+ * @author qiyuqi
+ */
 public class JpaConvertSubmitterWithJson implements AttributeConverter<Submitter, String> {
     private static final ObjectMapper objectMapper = new ObjectMapper();
 

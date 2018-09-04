@@ -10,6 +10,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+
+/**
+ * BaseCodeItem [POJO]
+ * @author qiyuqi
+ */
 @Data
 @Entity
 @Table(name = "BaseCodeItem")
@@ -43,6 +48,5 @@ public class BaseCodeItemEntity implements Serializable {
     private Submitter updater;
     @Convert(converter = JpaConvertSubmitterWithJson.class)
     private Submitter deleter;
-
 
 }
